@@ -11,7 +11,7 @@ class User {
         if (!$sql->execute()) {
             return false;
         }
-        return true;
+        return $conn->insert_id;
     }
 
     public static function checkUser($user) {
@@ -47,6 +47,6 @@ class User {
         if (!password_verify($user->password,$password_from_db)) {
             return false;
         }
-        return true;
+        return $result['id'];
     } 
 }

@@ -18,9 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return;
     }
 
-    if (!User::verifyUser($user)) {
+    $user_id = User::verifyUser($user);
+
+    if (!$user_id) {
         echo json_encode(['success' => false, 'message' => 'Password is not correct']);
         return;
     }
-    
+
+    echo json_encode(['success' => false, 'message' => $user_id]);
+    return;
 }
