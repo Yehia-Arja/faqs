@@ -1,5 +1,5 @@
 <?php
-require_once "Question.php";
+
 class QuestionSkeleton {
     public $question;
     public $answer;
