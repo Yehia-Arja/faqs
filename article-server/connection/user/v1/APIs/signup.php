@@ -13,13 +13,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return;
     }
 
-    $user = new UserSkeleton($username, $email, $password);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['success' => false, 'message' => 'Invalid email']);
+        return;
+    }
+
+    $hashed_password = password_hash($password,PASSWORD_DEFAULT);
+
+    $user = new UserSkeleton($username, $email, $hashed_password);
     if (User::checkUser($user)) {
         echo json_encode(['success' => false, 'message' => 'Email already registered']);
         return;
     }
 
     $user_id = User::addUser($user);
+
     if (!$user_id) {
         echo json_encode(['success' => false, 'message' => 'Coul not register user try again later']);
         return;

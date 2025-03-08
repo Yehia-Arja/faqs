@@ -37,7 +37,7 @@ class User {
         global $conn;
 
         $sql = $conn->prepare("SELECT * FROM users WHERE email = ?");
-        $sql->bind_param("i", $user->email);
+        $sql->bind_param("s", $user->email);
 
         if (!$sql->execute()) {
             return false;

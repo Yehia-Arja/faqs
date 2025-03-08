@@ -1,4 +1,5 @@
 <?php
+require_once "../../../connection.php";
 require_once "../../../models/Question.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
