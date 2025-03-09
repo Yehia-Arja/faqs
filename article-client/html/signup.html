@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+    <header class="signup-header">
+        <h1>Create an account for free</h1>
+        <p>use email to signup</p>
+    </header>
+    <main class="signup-main">
+        <section class="signup-section">
+            <div class="signup-form">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+
+                <label for="username">Username</label>
+                <input type="username" name="username" id="username" placeholder="Username" required>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <div>
+                    <div id="message-container"></div>
+                    <button id="login-button" class="login-button">Sign up</button>
+                    <p>Already have an account? <a class="redirect-signup" href="../index.html">Log in here</href=>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/client.js"></script>
+    <script>pages.loadFor('Signup')</script>
+</body>
+
+</html>

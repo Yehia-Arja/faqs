@@ -8,4 +8,5 @@ class QuestionSkeleton {
         $this->question = $question;
         $this->answer = $answer; 
     }
+    
 }

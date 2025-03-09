@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['success' => false, 'message' => 'Missing information']);
         return;
     }
-    $question_structure = new QuestionSkeleton($question, $answer);
+    $question_structure = Question::createQuestion($question,$answer);
 
     if (!Question::addQuestion($question_structure)) {
         echo json_encode(['success' => false, 'message' => 'Could not add question']);

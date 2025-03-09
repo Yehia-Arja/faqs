@@ -1,8 +1,13 @@
 <?php
 require_once __DIR__ . "/../connection.php";
+require_once __DIR__ .  "/QuestionSkeleton.php";
 
 class Question {
     
+    public static function createQuestion($question,$answer) {
+        $question_skeleton = new QuestionSkeleton($question, $answer);
+        return $question_skeleton;
+    }
     public static function getAllQuestions() {
         global $conn;
 
