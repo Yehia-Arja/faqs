@@ -18,7 +18,7 @@ UserSeed::run($conn);
 
 class QuestionSeed {
     public static function run($conn) {
-        $sql = "INSERT INTO questions (question,answer)
+        $sql = "INSERT INTO questions (id,question,answer)
 
         VALUES (1,'What is technical debt in machine learning systems?', 'Technical debt refers to the long-term maintenance costs of ML systems due to shortcuts, poor design choices, and accumulating complexity.'),
             (2,'How does technical debt in ML differ from traditional software technical debt?', 'ML systems have additional complexities like data dependencies, model entanglement, hidden feedback loops, and evolving external environments, making maintenance harder.'),
