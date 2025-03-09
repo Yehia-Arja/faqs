@@ -21,6 +21,17 @@ class Question {
         return false;
         
     }
+    public static function getSearchedQuestions($search) {
+        global $conn;
+
+        $sql = $conn->prepare("SELECT * FROM questions WHERE question LIKE CONCAT ('%',?,'%')");
+        $sql->bind_param('s', $search);
+        if (!$sql->execute()) {
+            return false;
+        }
+        $result = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
     public static function addQuestion($question) {
         global $conn;
 

@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return;
     }
 
-    $user = new UserSkeleton(' ', $email, $password);
+    $user = new UserSkeleton('', $email, $password);
     if (!User::checkUser($user)) {
         echo json_encode(['success' => false, 'message' => 'Email not registered']);
         return;
@@ -25,6 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return;
     }
 
-    echo json_encode(['success' => false, 'message' => $user_id]);
+    echo json_encode(['success' => true, 'message' => $user_id]);
     return;
 }
