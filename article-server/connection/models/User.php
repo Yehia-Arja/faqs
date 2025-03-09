@@ -11,7 +11,7 @@ class User {
         if (!$sql->execute()) {
             return false;
         }
-        return true;
+        return $conn->insert_id;
     }
 
     public static function checkUser($user) {
@@ -37,7 +37,7 @@ class User {
         global $conn;
 
         $sql = $conn->prepare("SELECT * FROM users WHERE email = ?");
-        $sql->bind_param("i", $user->email);
+        $sql->bind_param("s", $user->email);
 
         if (!$sql->execute()) {
             return false;
@@ -47,6 +47,6 @@ class User {
         if (!password_verify($user->password,$password_from_db)) {
             return false;
         }
-        return true;
+        return $result['id'];
     } 
 }

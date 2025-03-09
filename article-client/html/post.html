@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+    <a class="back-arrow" href="home.html">&#8592;</a>
+    <header class="post-header">
+        <h1>Add Your Question</h1>
+    </header>
+    <main class="post-main">
+        <section class="post-section">
+            <div class="post-form">
+
+                <label for="question">Question</label>
+                <input type="question" name="question" id="question" placeholder="What is AI?" required>
+
+                <label for="answer">Answer</label>
+                <input type="answer" name="answer" id="answer" placeholder="AI mimics human intelligence" required>
+                <div>
+                    <div id="message-container"></div>
+                    <button id="post-button" class="post-button">POST</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/client.js"></script>
+    <script>pages.loadFor('Post')</script>
+</body>
+
+</html>
